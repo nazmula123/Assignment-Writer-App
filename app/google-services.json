@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "77229938325",
+    "project_id": "assignmentwriter-ee75d",
+    "storage_bucket": "assignmentwriter-ee75d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77229938325:android:959e7726fff5cc77c4ad9c",
+        "android_client_info": {
+          "package_name": "com.example.assignment_writer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaNqilG28hE5LYDMKRZRNa-NPmRlJkhY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/img"
+    tools:context=".HomePage.HomeActivity">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="50dp"
+
+            >
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="100dp">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/image"
+                    />
+            </RelativeLayout>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/sing_in"
+                android:layout_width="wrap_content"
+                app:cardCornerRadius="30dp"
+                android:layout_margin="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:fontFamily="@font/button"
+                    android:background="@drawable/button_back"
+                    android:layout_width="120sp"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="22dp"
+                    android:text="Sign In"/>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:fontFamily="@font/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Explore Discover Create"
+            android:textColor="#03030D"
+            android:textSize="40dp" />
+
+
+        <TextView
+            android:fontFamily="@font/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Services"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/blog_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/blog"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Blog Writer"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Generate full blog posts from a topic and tone"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/gmail_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/create"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Email Generator"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Create professional or personalized emails fast"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/grammar_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/search"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Grammar Checker"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Fix grammar, speling and punctuation error"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cv_part"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/resume"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Resume/CV Writer"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text=" Generate professional resumes and CVs that highlight your skills and experience"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/assignment"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/assignment"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Assignment Writer"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Create well-researched and structured academic assignments on various topics"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/history"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/biography"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="History Writer"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text=" Craft engaging and informative historical narratives and accounts"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/application"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/application"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView    android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Application Writer"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text=" Develop compelling and persuasive applications for jobs, schools, or programs"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/letter"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/mail"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Letter Writer"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Compose personalized and effective letters for any occasion"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/readability"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/application2"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Readability Analysis"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Evaluate the clarity and ease of understanding of your text"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/essay"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/edit2"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="Essay Writer"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Generate well-structured and insightful essays on a given topic"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/mcq"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
+                    android:padding="2dp"
+                    android:weightSum="6"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/examtime"/>
+
+                    <LinearLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="0dp"
+                        android:layout_weight="5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="5">
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="3"
+                            android:layout_marginTop="10dp"
+                            android:text="MCQ Solver"
+                            android:textColor="@color/black"
+                            android:textStyle="bold"
+                            android:textSize="23dp"/>
+
+                        <TextView
+                            android:fontFamily="@font/button"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="2"
+                            android:text="Generate Correct mcq solver"
+                            android:textColor="@color/black"
+                            android:textSize="10dp"/>
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_margin="5dp"
+                        android:layout_weight="0.5"
+                        android:src="@drawable/right"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</FrameLayout>

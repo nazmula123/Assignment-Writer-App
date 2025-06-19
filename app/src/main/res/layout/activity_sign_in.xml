@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Login.SignIn">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create Your Profile"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:fontFamily="@font/button"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="50dp"
+        app:hintEnabled="false"
+        app:endIconMode="clear_text"
+        app:endIconCheckable="true"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:fontFamily="@font/button"
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:hint="Email"
+            android:background="@drawable/custom_edittext"
+            android:padding="10dp"
+            android:layout_height="55dp"
+            android:inputType="textPersonName"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginTop="20dp"
+        app:hintEnabled="false"
+        app:endIconMode="password_toggle"
+        app:endIconCheckable="true"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:fontFamily="@font/button"
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:hint="Password"
+            android:background="@drawable/custom_edittext"
+            android:padding="10dp"
+            android:layout_height="55dp"
+            android:inputType="textPassword"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sing_in"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginLeft="30dp"
+        app:cardElevation="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#0195FF"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="30dp">
+
+        <TextView
+            android:fontFamily="@font/button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sign In"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:gravity="center"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/forget_password"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Forget Password"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+           android:gravity="center"
+            android:fontFamily="@font/button"
+            />
+
+        <TextView
+            android:id="@+id/signUp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:fontFamily="@font/button"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

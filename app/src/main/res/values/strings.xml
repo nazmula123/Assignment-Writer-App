@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Assignment_Writer</string>
+
+
+    <string-array name="spinner1">
+        <item>Default</item>
+        <item>Arabic</item>
+        <item>Bangla</item>
+        <item>English</item>
+        <item>French</item>
+        <item>German</item>
+        <item>English</item>
+        <item>Hindi</item>
+        <item>Nepali</item>
+    </string-array>
+
+    <string-array name="level_name">
+        <item>Default</item>
+        <item>Middle School</item>
+        <item>High School</item>
+        <item>College</item>
+        <item>Graduate</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

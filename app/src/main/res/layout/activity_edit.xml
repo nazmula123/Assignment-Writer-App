@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_2"
+    tools:context=".Edit.EditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        >
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="30dp"
+            android:src="@drawable/back"/>
+        <TextView
+            android:layout_marginTop="-3dp"
+            android:fontFamily="@font/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Edit Assignment"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:layout_marginLeft="25dp"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/a"
+                    android:layout_margin="5dp"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/a"
+                    android:layout_margin="5dp"/>
+
+                <ImageView
+                    android:id="@+id/text_bold"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/document"
+                    android:layout_margin="5dp"/>
+
+                <ImageView
+                    android:id="@+id/italic"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/italic"
+                    android:layout_margin="5dp"/>
+                <ImageView
+                    android:id="@+id/underline"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/font"
+                    android:layout_margin="5dp"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/leftindent"
+                    android:layout_margin="5dp"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/linespacing"
+                    android:layout_margin="5dp"/>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/rightindent"
+                    android:layout_margin="5dp"/>
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/coloricons"
+                    android:layout_margin="5dp"/>
+
+
+            </LinearLayout>
+        </ScrollView>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/text"
+                android:fontFamily="@font/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:editable="true"
+                android:padding="10dp"
+               android:background="@drawable/background"
+                android:textStyle="normal"
+                android:textColor="#050524"
+                />
+        </LinearLayout>
+
+    </ScrollView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/save_text"
+            android:layout_width="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:layout_alignParentEnd="true"
+            app:cardElevation="10dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="50dp"
+            android:layout_height="50dp">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+
+                android:src="@drawable/download"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+</LinearLayout>
