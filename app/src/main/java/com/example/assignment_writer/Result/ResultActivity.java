@@ -2,6 +2,7 @@ package com.example.assignment_writer.Result;
 
 import android.content.Intent;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,10 +18,12 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.example.assignment_writer.Edit.EditActivity;
 import com.example.assignment_writer.Edit.PdfGenerate;
 import com.example.assignment_writer.R;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.ai.client.generativeai.GenerativeModel;
 import com.google.ai.client.generativeai.java.GenerativeModelFutures;
 import com.google.ai.client.generativeai.type.Content;
@@ -36,6 +40,8 @@ import java.util.concurrent.Executors;
 public class ResultActivity extends AppCompatActivity implements View.OnClickListener{
     private ImageView edit_text, back,pdfGenerate;
     TextView gpt_text;
+    ShimmerFrameLayout shimmerFrameLayout;
+    LinearLayout layout;
     private static final int CREATE_PDF_REQUEST_CODE = 1;
     private String textToConvert = "";
 
@@ -43,22 +49,23 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_result);
+
+        FindId();
+
+        pdfGenerate.setOnClickListener(this);
+        TextGenerate();
+        back.setOnClickListener(this);
+        edit_text.setOnClickListener(this);
+        shimmerFrameLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.background));
+    }
+
+    private void FindId(){
         edit_text = findViewById(R.id.edit_text);
-
-
         back = findViewById(R.id.back);
         gpt_text = findViewById(R.id.gpt_text);
-
+        shimmerFrameLayout=findViewById(R.id.shimmer_layout);
+        layout=findViewById(R.id.layout);
         pdfGenerate=findViewById(R.id.generate_pdf);
-        pdfGenerate.setOnClickListener(this);
-
-        TextGenerate();
-
-        back.setOnClickListener(this);
-
-        edit_text.setOnClickListener(this);
-
-
     }
 
     public void TextGenerate(){
@@ -90,6 +97,8 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
 
                     runOnUiThread(() -> {
                         gpt_text.setText(resultText);
+                        shimmerFrameLayout.stopShimmer();
+                        layout.setVisibility(View.VISIBLE);
                         Toast.makeText(ResultActivity.this, "Response received!", Toast.LENGTH_SHORT).show();
                     });
                 } else {
@@ -99,11 +108,12 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
                     });
                 }
             }
-
             @Override
             public void onFailure(@NonNull Throwable t) {
                 runOnUiThread(() -> {
                     gpt_text.setText("Error: " + t.getMessage());
+                    shimmerFrameLayout.stopShimmer();
+                    layout.setVisibility(View.VISIBLE);
                     Toast.makeText(ResultActivity.this, "Failed to call API.", Toast.LENGTH_SHORT).show();
                 });
                 Log.e("API_ERROR", "Error calling API", t);

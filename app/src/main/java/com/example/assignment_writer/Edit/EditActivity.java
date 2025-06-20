@@ -27,12 +27,7 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_edit);
 
-        back = findViewById(R.id.back);
-        text = findViewById(R.id.text);
-        bold_text = findViewById(R.id.text_bold);
-        italic=findViewById(R.id.italic);
-        underline=findViewById(R.id.underline);
-        cardView=findViewById(R.id.save_text);
+          FindId();
 
         back.setOnClickListener(this);
         bold_text.setOnClickListener(this);
@@ -41,8 +36,17 @@ public class EditActivity extends AppCompatActivity implements View.OnClickListe
         cardView.setOnClickListener(this);
         setText();
     }
+private void FindId(){
 
-    private void setText() {
+    back = findViewById(R.id.back);
+    text = findViewById(R.id.text);
+    bold_text = findViewById(R.id.text_bold);
+    italic=findViewById(R.id.italic);
+    underline=findViewById(R.id.underline);
+    cardView=findViewById(R.id.save_text);
+}
+
+private void setText() {
         Intent intent = getIntent();
         String inputText = intent.getStringExtra("text_edit");
         if (inputText != null) {

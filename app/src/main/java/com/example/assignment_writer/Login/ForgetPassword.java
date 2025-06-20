@@ -36,10 +36,7 @@ public class ForgetPassword extends AppCompatActivity {
 
         reference= FirebaseDatabase.getInstance().getReference("Users");
 
-        user_email=findViewById(R.id.email);
-        new_password=findViewById(R.id.password);
-        confirm_password=findViewById(R.id.confirm_password);
-        forget_password=findViewById(R.id.forget_password);
+        FindId();
 
         forget_password.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +47,13 @@ public class ForgetPassword extends AppCompatActivity {
         });
 
     }
+private void FindId(){
 
+    user_email=findViewById(R.id.email);
+    new_password=findViewById(R.id.password);
+    confirm_password=findViewById(R.id.confirm_password);
+    forget_password=findViewById(R.id.forget_password);
+}
     private void RestPassword() {
 
         View dialogView = LayoutInflater.from(ForgetPassword.this).inflate(R.layout.dialog_box, null);

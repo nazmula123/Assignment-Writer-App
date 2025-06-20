@@ -24,8 +24,6 @@ public class SignUp extends AppCompatActivity {
     String email,user_name,full_name,phone,password,confirm_password;
     CardView signUp;
     DatabaseReference reference;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,15 +32,7 @@ public class SignUp extends AppCompatActivity {
 
       reference=FirebaseDatabase.getInstance().getReference("Users");
 
-        user_email=findViewById(R.id.user_email);
-        username=findViewById(R.id.user_name);
-        user_full_name=findViewById(R.id.user_full_name);
-        user_phone=findViewById(R.id.user_phone);
-        user_password=findViewById(R.id.user_password);
-        user_confirm_password=findViewById(R.id.confirm_password);
-        signUp=findViewById(R.id.signUp);
-
-
+      FindId();
 
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +42,16 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
+private void FindId(){
+    user_email=findViewById(R.id.user_email);
+    username=findViewById(R.id.user_name);
+    user_full_name=findViewById(R.id.user_full_name);
+    user_phone=findViewById(R.id.user_phone);
+    user_password=findViewById(R.id.user_password);
+    user_confirm_password=findViewById(R.id.confirm_password);
+    signUp=findViewById(R.id.signUp);
+}
     private void SignupFromUser() {
-
-
         isChecked checked = new isChecked();
         HashString hashString = new HashString();
 
@@ -86,7 +83,6 @@ public class SignUp extends AppCompatActivity {
             builder.setView(dialogView);
             AlertDialog dialog = builder.create();
             dialog.show();
-
 
             String sPassword = hashString.sha256(password);
 

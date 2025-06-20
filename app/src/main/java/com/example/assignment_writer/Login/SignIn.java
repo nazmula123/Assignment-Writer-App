@@ -39,13 +39,7 @@ public class SignIn extends AppCompatActivity {
 
         userRef= FirebaseDatabase.getInstance().getReference("Users");
 
-        signIn=findViewById(R.id.sing_in);
-        email=findViewById(R.id.email);
-        password=findViewById(R.id.password);
-       forget=findViewById(R.id.forget_password);
-       signup=findViewById(R.id.signUp);
-
-
+        FindId();
        SetClick();
 
        signIn.setOnClickListener(new View.OnClickListener() {
@@ -65,9 +59,16 @@ public class SignIn extends AppCompatActivity {
             }
         });
     }
+
+    private void FindId(){
+        signIn=findViewById(R.id.sing_in);
+        email=findViewById(R.id.email);
+        password=findViewById(R.id.password);
+        forget=findViewById(R.id.forget_password);
+        signup=findViewById(R.id.signUp);
+
+    }
     private void loginUser() {
-
-
         View dialogView = LayoutInflater.from(SignIn.this).inflate(R.layout.dialog_box, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(SignIn.this);
         builder.setView(dialogView);
