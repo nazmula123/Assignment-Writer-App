@@ -11,10 +11,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.assignment_writer.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class WriterPage extends AppCompatActivity {
 private ImageView back;
@@ -22,11 +27,14 @@ private Spinner spinner1,spinner2;
 private EditText title,type,tone,word;
 private TextView textView;
 private CardView generate;
+private DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_writer_page);
+
+        reference= FirebaseDatabase.getInstance().getReference("HistoryDatabase");
 
         FindId();
 
@@ -95,7 +103,18 @@ private CardView generate;
         spinner2.setAdapter(adapter);
         spinner2.setPopupBackgroundResource(R.drawable.pop_up);
     }
+private void AddFirebaseHistory(){
+        AddHistoryRecyclerViewModel addHistoryRecyclerViewModel=new AddHistoryRecyclerViewModel("Science Project","12/05/2025","wfsdfs");
 
+    reference.child(reference.push().getKey()).setValue(addHistoryRecyclerViewModel).addOnCompleteListener(task -> {
+        if (task.isSuccessful()) {
+
+            Toast.makeText(this, "Successful Added", Toast.LENGTH_SHORT).show();
+
+        }
+    });
+
+}
     private String WriteText(){
 
         String  command_text="",type_text="",title_text="",tone_text="",word_text="",language_text="",level_text="";
@@ -108,7 +127,6 @@ private CardView generate;
         command_text = "Write a " + tone_text + " " + type_text + " titled '" + title_text +
                 "' in " + language_text + " for " + level_text + " level students. The content should be around " +
                 word_text + " words.";
-
         return command_text;
     }
 }
