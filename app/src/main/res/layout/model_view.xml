@@ -74,6 +74,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/delete"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_gravity="end"

@@ -59,8 +59,7 @@ private DatabaseReference reference;
                }
 
                else{
-
-
+                   AddFirebaseHistory();
                    Intent intent1=new Intent(WriterPage.this, ResultActivity.class);
                    intent1.putExtra("topic_text",WriteText());
                    startActivity(intent1);
@@ -106,7 +105,7 @@ private DatabaseReference reference;
 private void AddFirebaseHistory(){
         AddHistoryRecyclerViewModel addHistoryRecyclerViewModel=new AddHistoryRecyclerViewModel("Science Project","12/05/2025","wfsdfs");
 
-    reference.child(reference.push().getKey()).setValue(addHistoryRecyclerViewModel).addOnCompleteListener(task -> {
+     reference.child(reference.push().getKey()).setValue(addHistoryRecyclerViewModel).addOnCompleteListener(task -> {
         if (task.isSuccessful()) {
 
             Toast.makeText(this, "Successful Added", Toast.LENGTH_SHORT).show();

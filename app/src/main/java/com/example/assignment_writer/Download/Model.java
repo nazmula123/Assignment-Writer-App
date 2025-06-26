@@ -2,7 +2,6 @@ package com.example.assignment_writer.Download;
 
 public class Model {
     String time,text;
-
     public String getTime() {
         return time;
     }
@@ -19,6 +18,9 @@ public class Model {
         this.text = text;
     }
 
+    public Model(){
+
+    }
     public Model(String time, String text){
 
         this.time=time;
