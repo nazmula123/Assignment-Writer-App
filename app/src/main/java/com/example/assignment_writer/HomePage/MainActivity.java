@@ -9,7 +9,7 @@ import com.example.assignment_writer.Download.downloadActivity;
 import com.example.assignment_writer.History.BlankFragment;
 import com.example.assignment_writer.Profile.ProfileActivity;
 import com.example.assignment_writer.R;
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity{
 
     private ImageView home,download,history,account;
      HomeActivity homeActivity=new HomeActivity();
@@ -27,30 +27,63 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         download=findViewById(R.id.download);
         history=findViewById(R.id.history);
         account=findViewById(R.id.account);
-
-        home.setOnClickListener(this);
-        download.setOnClickListener(this);
-        history.setOnClickListener(this);
-        account.setOnClickListener(this);
-
         getSupportFragmentManager().beginTransaction().replace(R.id.frame,homeActivity).commit();
+
+        setHomeActivity();
+        setDownloadActivity();
+        setHistoryActivity();
+        setProfileActivity();
+    }
+    private void setHomeActivity(){
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame,homeActivity).commit();
+                home.setImageResource(R.drawable.home_select);
+                download.setImageResource(R.drawable.download_b);
+                history.setImageResource(R.drawable.history_b);
+                account.setImageResource(R.drawable.user);
+            }
+        });
+    }
+    private void setDownloadActivity(){
+
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame,downloadActivity).commit();
+                home.setImageResource(R.drawable.home);
+                download.setImageResource(R.drawable.download_c);
+                history.setImageResource(R.drawable.history_b);
+                account.setImageResource(R.drawable.user);
+            }
+        });
     }
 
-    @Override
-    public void onClick(View v) {
-
-        if(v.getId()==R.id.home){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame,homeActivity).commit();
-        }
-        else if(v.getId()== R.id.download){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame,downloadActivity).commit();
-        }
-        else if(v.getId()==R.id.history)
-        {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame,historyActivity).commit();
-        }
-        else if(v.getId()==R.id.account){
-            getSupportFragmentManager().beginTransaction().replace(R.id.frame,profile).commit();
-        }
+    private void setHistoryActivity(){
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame,historyActivity).commit();
+                history.setImageResource(R.drawable.home);
+                download.setImageResource(R.drawable.download_b);
+                history.setImageResource(R.drawable.history_c);
+                account.setImageResource(R.drawable.user);
+            }
+        });
     }
+
+    private void setProfileActivity(){
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.frame,profile).commit();
+                history.setImageResource(R.drawable.home);
+                download.setImageResource(R.drawable.download_b);
+                history.setImageResource(R.drawable.history_b);
+                account.setImageResource(R.drawable.user_c);
+            }
+        });
+    }
+
 }

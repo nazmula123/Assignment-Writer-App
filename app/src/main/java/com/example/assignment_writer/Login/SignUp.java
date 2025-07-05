@@ -92,6 +92,9 @@ private void FindId(){
             userMap.put("fullName", full_name);
             userMap.put("phone", phone);
             userMap.put("password", sPassword);
+            userMap.put("Photos","https://firebasestorage.googleapis.com/v0/b/clanguage-d17c6.appspot.com/o/profileImage%2Fuser%20(5).png?alt=media&token=692ab04f-fe90-4ed7-973c-48e54ae2dca8");
+
+            //String userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
 
             reference.child(reference.push().getKey()).setValue(userMap).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {

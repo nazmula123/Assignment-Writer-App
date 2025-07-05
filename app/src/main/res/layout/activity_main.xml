@@ -36,14 +36,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:src="@drawable/list"/>
+                android:src="@drawable/download_b"/>
             <ImageView
                 android:id="@+id/history"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:src="@drawable/history"/>
+                android:src="@drawable/history_b"/>
             <ImageView
                 android:id="@+id/account"
                 android:layout_width="0dp"

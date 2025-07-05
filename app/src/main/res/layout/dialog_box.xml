@@ -6,6 +6,7 @@
     app:cardElevation="50dp"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="15dp"
+    android:alpha="0.8"
     android:layout_height="180sp">
 
     <ProgressBar

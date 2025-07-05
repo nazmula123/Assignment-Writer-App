@@ -5,12 +5,35 @@
     android:layout_height="match_parent"
     android:background="@drawable/img"
     tools:context=".Download.downloadActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="no available download"
+        android:layout_centerInParent="true"
+        android:textStyle="bold"
+        android:fontFamily="@font/title"
+        android:textColor="#090E37"
+        android:textSize="35dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
-        android:id="@+id/recyclerView"/>
+        android:id="@+id/download_recycler"/>
 
-
+    </RelativeLayout>
 </FrameLayout>

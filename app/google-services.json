@@ -1,13 +1,14 @@
 {
   "project_info": {
-    "project_number": "77229938325",
-    "project_id": "assignmentwriter-ee75d",
-    "storage_bucket": "assignmentwriter-ee75d.firebasestorage.app"
+    "project_number": "592962580986",
+    "firebase_url": "https://clanguage-d17c6-default-rtdb.firebaseio.com",
+    "project_id": "clanguage-d17c6",
+    "storage_bucket": "clanguage-d17c6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:77229938325:android:959e7726fff5cc77c4ad9c",
+        "mobilesdk_app_id": "1:592962580986:android:5cdef1354428ea3114f443",
         "android_client_info": {
           "package_name": "com.example.assignment_writer"
         }
@@ -15,7 +16,45 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDaNqilG28hE5LYDMKRZRNa-NPmRlJkhY0"
+          "current_key": "AIzaSyBSjpZrJ5yLNXilA2F86HPVfm2wY1UIH74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592962580986:android:6dbe0cfa1d5442f414f443",
+        "android_client_info": {
+          "package_name": "com.example.ghuraguriapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSjpZrJ5yLNXilA2F86HPVfm2wY1UIH74"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592962580986:android:0e89c6dfcd76c87e14f443",
+        "android_client_info": {
+          "package_name": "com.example.locationtrack"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSjpZrJ5yLNXilA2F86HPVfm2wY1UIH74"
         }
       ],
       "services": {

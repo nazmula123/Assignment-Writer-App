@@ -22,6 +22,7 @@ public class Flash_Skin extends AppCompatActivity {
             public void run() {
 
                 startActivity(new Intent(Flash_Skin.this,MainActivity.class));
+                finish();
             }
         },3000);
 

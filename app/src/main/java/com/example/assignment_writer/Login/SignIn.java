@@ -1,6 +1,7 @@
 package com.example.assignment_writer.Login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,12 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-
-import com.example.assignment_writer.HomePage.HomeActivity;
-import com.example.assignment_writer.HomePage.MainActivity;
 import com.example.assignment_writer.R;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -25,22 +22,25 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class SignIn extends AppCompatActivity {
-
     String user_email,user_password;
     private CardView signIn;
     private TextView forget,signup;
     private TextInputEditText email,password;
     private DatabaseReference userRef;
+    private boolean loginFace=false;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_sign_in);
 
-        userRef= FirebaseDatabase.getInstance().getReference("Users");
+        sharedPreferences=getSharedPreferences("MyPrefs",MODE_PRIVATE);
 
+
+        userRef= FirebaseDatabase.getInstance().getReference("Users");
         FindId();
-       SetClick();
+        SetClick();
 
        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +75,6 @@ public class SignIn extends AppCompatActivity {
         AlertDialog dialog = builder.create();
         dialog.show();
 
-
         HashString HashUtil=new HashString();
 
         user_email = email.getText().toString().trim();
@@ -87,16 +86,26 @@ public class SignIn extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
+                SharedPreferences.Editor editor=sharedPreferences.edit();
+
                 for (DataSnapshot userSnap : snapshot.getChildren()) {
 
                     String dbEmail = userSnap.child("email").getValue(String.class);
                     String dbPass = userSnap.child("password").getValue(String.class);
 
                     if (user_email.equals(dbEmail) && hashedInputPass.equals(dbPass)) {
+
+                        String key=userSnap.getKey();
+                        loginFace=true;
+                        editor.putString("profileKey",key);
+                        editor.putBoolean("profilePermission",loginFace);
+                        editor.apply();
+
                         s=1;
                         break;
                     }
                 }
+
                 if (s==1) {
                     Toast.makeText(SignIn.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     dialog.dismiss();

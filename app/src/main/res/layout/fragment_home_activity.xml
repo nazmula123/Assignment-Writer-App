@@ -28,9 +28,10 @@
 
 
                 <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profileImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@drawable/image"
+                    android:src="@drawable/profile2"
                     />
             </RelativeLayout>
             <androidx.cardview.widget.CardView
@@ -664,7 +665,9 @@
                         android:layout_weight="0.5"
                         android:src="@drawable/right"/>
                 </LinearLayout>
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="80dp"/>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
